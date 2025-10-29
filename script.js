@@ -1,54 +1,79 @@
-// script.js - Carrusel funcional
-document.addEventListener("DOMContentLoaded", function () {
-  const track = document.getElementById("carruselTrack");
-  const slides = document.querySelectorAll(".slide");
-  const prevBtn = document.getElementById("prevBtn");
-  const nextBtn = document.getElementById("nextBtn");
-  const puntosContainer = document.getElementById("puntos");
-
+// Carrusel de paquetes
+document.addEventListener("DOMContentLoaded", () => {
+  const categorias = document.querySelectorAll('.categoria');
+  const descripcion = document.getElementById('descripcionCategoria');
+  const slides = document.querySelectorAll('.slide');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const puntosContainer = document.getElementById('puntos');
+  let currentCategoria = 'fibra';
   let currentIndex = 0;
-  const totalSlides = slides.length;
-
-  // Crear puntos
-  for (let i = 0; i < totalSlides; i++) {
-    const punto = document.createElement("div");
-    punto.classList.add("punto");
-    if (i === 0) punto.classList.add("active");
-    punto.addEventListener("click", () => goToSlide(i));
-    puntosContainer.appendChild(punto);
+  let filteredSlides = [];
+  const descripciones = {
+    fibra: "¡Todo en uno, sin complicaciones! Conecta tu hogar o negocio con la mejor tecnología y disfruta de nuestro servicio sin preocupaciones.",
+    antena: "Conexión inalámbrica confiable y rápida. Ideal para zonas donde la fibra aún no llega. ¡Sin cables, sin límites!"
+  };
+  function filtrarSlides(categoria) {
+    filteredSlides = Array.from(slides).filter(s => s.dataset.tipo === categoria);
+    currentIndex = 0;
+    updateCarrusel();
+    updatePuntos();
   }
-
-  const puntos = document.querySelectorAll(".punto");
-
-  function updateCarousel() {
-    track.style.transform = `translateX(-${currentIndex * 100}%)`;
-    slides.forEach((slide, index) => {
-      slide.classList.toggle("active", index === currentIndex);
+  function updateCarrusel() {
+    slides.forEach(s => {
+      s.classList.remove('active');
+      s.style.display = 'none';
     });
-    puntos.forEach((punto, index) => {
-      punto.classList.toggle("active", index === currentIndex);
+    if (filteredSlides.length > 0) {
+      const activeSlide = filteredSlides[currentIndex];
+      activeSlide.classList.add('active');
+      activeSlide.style.display = 'flex';
+    }
+  }
+  function updatePuntos() {
+    puntosContainer.innerHTML = '';
+    if (filteredSlides.length <= 1) {
+      prevBtn.style.display = 'none';
+      nextBtn.style.display = 'none';
+      return;
+    } else {
+      prevBtn.style.display = 'flex';
+      nextBtn.style.display = 'flex';
+    }
+    filteredSlides.forEach((_, i) => {
+      const punto = document.createElement('div');
+      punto.classList.add('punto');
+      if (i === currentIndex) punto.classList.add('active');
+      punto.addEventListener('click', () => {
+        currentIndex = i;
+        updateCarrusel();
+        updatePuntos();
+      });
+      puntosContainer.appendChild(punto);
     });
   }
-
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % totalSlides;
-    updateCarousel();
-  }
-
-  function prevSlide() {
-    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-    updateCarousel();
-  }
-
-  function goToSlide(index) {
-    currentIndex = index;
-    updateCarousel();
-  }
-
-  nextBtn.addEventListener("click", nextSlide);
-  prevBtn.addEventListener("click", prevSlide);
-
-  updateCarousel();
+  prevBtn.addEventListener('click', () => {
+    if (filteredSlides.length <= 1) return;
+    currentIndex = (currentIndex - 1 + filteredSlides.length) % filteredSlides.length;
+    updateCarrusel();
+    updatePuntos();
+  });
+  nextBtn.addEventListener('click', () => {
+    if (filteredSlides.length <= 1) return;
+    currentIndex = (currentIndex + 1) % filteredSlides.length;
+    updateCarrusel();
+    updatePuntos();
+  });
+  categorias.forEach(cat => {
+    cat.addEventListener('click', () => {
+      categorias.forEach(c => c.classList.remove('active'));
+      cat.classList.add('active');
+      currentCategoria = cat.dataset.categoria;
+      descripcion.textContent = descripciones[currentCategoria];
+      filtrarSlides(currentCategoria);
+    });
+  });
+  filtrarSlides('fibra');
 });
 
 
@@ -71,30 +96,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-// === AUTO SCROLL + DETENER CON CLIC ===
+// Abansar los baners
 const seccionesIndex = ['Inicio', 'video', 'Servicios', 'contact-banner', 'about'];
-const seccionesAyuda = ['Inicio', 'bot']; // ← AÑADÍ #bot
-
+const seccionesAyuda = ['Inicio', 'bot']; 
 let indice = 0;
 let intervalo = null;
 let autoScrollActivo = true;
-
 function getSecciones() {
   const pagina = document.body.dataset.pagina || 'index';
   return pagina === 'ayuda' ? seccionesAyuda : seccionesIndex;
 }
-
 function scrollSiguiente() {
   if (!autoScrollActivo) return;
-
   const secciones = getSecciones();
   const siguiente = document.getElementById(secciones[indice]);
   if (siguiente) {
     const header = document.querySelector('.header');
     const headerAltura = header ? header.offsetHeight : 0;
     const y = siguiente.offsetTop - headerAltura - 20;
-
     window.scrollTo({
       top: y,
       behavior: 'smooth'
@@ -102,17 +121,14 @@ function scrollSiguiente() {
   }
   indice = (indice + 1) % secciones.length;
 }
-
 function iniciarAutoScroll() {
   if (intervalo) clearInterval(intervalo);
   intervalo = setInterval(scrollSiguiente, 10000); // 10 SEGUNDOS
 }
-
 function detenerAutoScroll() {
   autoScrollActivo = false;
   if (intervalo) clearInterval(intervalo);
 }
-
 window.addEventListener('load', function() {
   const loader = document.getElementById('loader');
   if (loader) {
@@ -121,22 +137,17 @@ window.addEventListener('load', function() {
       setTimeout(() => loader.style.display = 'none', 600);
     }, 2000);
   }
-
   iniciarAutoScroll();
-
-  // DETENER AL HACER CLIC EN MENÚ
+  // Detener al hacer ckic
   document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', detenerAutoScroll);
   });
-
-  // DETENER AL HACER SCROLL MANUAL
   let timeout;
   window.addEventListener('wheel', () => {
     detenerAutoScroll();
     clearTimeout(timeout);
     timeout = setTimeout(() => autoScrollActivo = true, 15000);
   }, { passive: true });
-
   window.addEventListener('touchstart', () => {
     detenerAutoScroll();
     clearTimeout(timeout);
