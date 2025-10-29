@@ -10,8 +10,7 @@
 </head>
 <!-- EN <head> -->
 <body data-pagina="index">
-
-  <!-- PANTALLA DE CARGA CIRCULAR -->
+  <!-- Pantalla de Carga -->
   <div id="loader">
     <div class="video-circular">
       <video autoplay muted loop playsinline>
@@ -31,7 +30,7 @@
 
 
 
-  <!-- HEADER -->
+  <!-- Menu -->
   <header class="header">
     <div class="menu-container">
       <a href="#" class="logo">
@@ -60,10 +59,9 @@
 
 
 
-  <!-- HERO CON FONDO ANIMADO CSS -->
+  <!-- Baner 1 -->
   <section class="hero" id="Inicio">
     <div class="hero-bg"></div>  
-    <!-- RED ANIMADA CON CSS -->
     <div class="network-bg">
       <div class="node"></div>
       <div class="node"></div>
@@ -97,25 +95,13 @@
 
 
 
-
-
-
-
-
-
-  
-
-
-  <!-- SECCIÓN VIDEO FUTURISTA (SIN TEXTO) -->
+  <!-- Video -->
 <section class="video-futuristic" id="video">
-  <!-- FONDO FUTURISTA ANIMADO -->
   <div class="futuristic-bg">
     <div class="grid-lines"></div>
     <div class="scan-line"></div>
     <div class="particles"></div>
   </div>
-
-  <!-- VIDEO CENTRADO -->
   <div class="video-container">
     <div class="video-wrapper">
       <video controls autoplay muted loop playsinline>
@@ -135,134 +121,78 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-  <!-- SECCIÓN PAQUETES - FUNCIONAL + FLECHAS < > -->
-<section class="paquetes-carrusel-js" id="Servicios">
+  <!-- Servicios -->
+<section class="seccion-internet">
   <div class="container">
-    <h2 class="section-title">Paquetes Disponibles</h2>
+    <h1 class="section-title">Tenemos la opción ideal para ti</h1>
     <p class="section-subtitle">Elige el plan ideal para tu conexión</p>
-
+    <!-- SELECTOR -->
+    <div class="categorias">
+      <div class="categoria active" data-categoria="fibra">Fibra Óptica</div>
+      <div class="categoria" data-categoria="antena">Antena</div>
+    </div>
+    <p class="descripcion-categoria" id="descripcionCategoria">
+      ¡Todo en uno, sin complicaciones! Conecta tu hogar o negocio con la mejor tecnología y disfruta de nuestro servicio sin preocupaciones.
+    </p>
+    <!-- CARRUSEL -->
     <div class="carrusel-wrapper">
-      <!-- FLECHA ANTERIOR -->
       <button class="nav-btn prev-btn" id="prevBtn">&lt;</button>
-
-      <!-- CARRUSEL -->
       <div class="carrusel-container">
         <div class="carrusel-track" id="carruselTrack">
-          
-          <!-- PAQUETE 1 -->
-          <div class="slide active">
+          <!-- FIBRA -->
+          <div class="slide" data-tipo="fibra">
             <div class="paquete-card">
-              <div class="card-header">
-                <span class="tipo">FIBRA ÓPTICA</span>
-                <h3>Paquete Básico</h3>
-              </div>
+              <div class="card-header"><span class="tipo">FIBRA ÓPTICA</span><h3>Paquete Básico</h3></div>
               <div class="velocidad">100 <span>Mbps</span></div>
               <div class="precio">$500 <span>/ mes</span></div>
-              <a href="https://wa.me/528128838654?text=Hola%2C%20quiero%20el%20Paquete%20B%C3%A1sico%20Fibra%20de%20100Mbps" 
-                 class="btn-carrusel" target="_blank">
-                <i class="fab fa-whatsapp"></i> Contratar
-              </a>
+              <a href="https://wa.me/528128838654?text=Hola%2C%20quiero%20el%20Paquete%20B%C3%A1sico%20Fibra%20de%20100Mbps" class="btn-carrusel" target="_blank"><i class="fab fa-whatsapp"></i> Contratar</a>
             </div>
           </div>
-
-          <!-- PAQUETE 2 -->
-          <div class="slide">
+          <div class="slide" data-tipo="fibra">
             <div class="paquete-card">
-              <div class="card-header">
-                <span class="tipo popular">FIBRA ÓPTICA</span>
-                <h3>Paquete Estándar</h3>
-              </div>
+              <div class="card-header"><span class="tipo popular">FIBRA ÓPTICA</span><h3>Paquete Estándar</h3></div>
               <div class="velocidad">150 <span>Mbps</span></div>
               <div class="precio">$600 <span>/ mes</span></div>
-              <a href="https://wa.me/528128838654?text=Hola%2C%20quiero%20el%20Paquete%20Est%C3%A1ndar%20Fibra%20de%20150Mbps" 
-                 class="btn-carrusel" target="_blank">
-                <i class="fab fa-whatsapp"></i> Contratar
-              </a>
+              <a href="https://wa.me/528128838654?text=Hola%2C%20quiero%20el%20Paquete%20Est%C3%A1ndar%20Fibra%20de%20150Mbps" class="btn-carrusel" target="_blank"><i class="fab fa-whatsapp"></i> Contratar</a>
             </div>
           </div>
-
-          <!-- PAQUETE 3 -->
-          <div class="slide">
+          <div class="slide" data-tipo="fibra">
             <div class="paquete-card">
-              <div class="card-header">
-                <span class="tipo">FIBRA ÓPTICA</span>
-                <h3>Paquete Max</h3>
-              </div>
+              <div class="card-header"><span class="tipo">FIBRA ÓPTICA</span><h3>Paquete Max</h3></div>
               <div class="velocidad">200 <span>Mbps</span></div>
               <div class="precio">$700 <span>/ mes</span></div>
-              <a href="https://wa.me/528128838654?text=Hola%2C%20quiero%20el%20Paquete%20Max%20Fibra%20de%20200Mbps" 
-                 class="btn-carrusel" target="_blank">
-                <i class="fab fa-whatsapp"></i> Contratar
-              </a>
+              <a href="https://wa.me/528128838654?text=Hola%2C%20quiero%20el%20Paquete%20Max%20Fibra%20de%20200Mbps" class="btn-carrusel" target="_blank"><i class="fab fa-whatsapp"></i> Contratar</a>
             </div>
           </div>
-
-          <!-- PAQUETE 4 -->
-          <div class="slide">
+          <!-- ANTENA -->
+          <div class="slide" data-tipo="antena">
             <div class="paquete-card">
-              <div class="card-header">
-                <span class="tipo">ANTENA</span>
-                <h3>Paquete Básico</h3>
-              </div>
+              <div class="card-header"><span class="tipo">ANTENA</span><h3>Paquete Básico</h3></div>
               <div class="velocidad">30 <span>Mbps</span></div>
               <div class="precio">$399 <span>/ mes</span></div>
-              <a href="https://wa.me/528128838654?text=Hola%2C%20quiero%20el%20Paquete%20B%C3%A1sico%20Antena%20de%2030Mbps" 
-                 class="btn-carrusel" target="_blank">
-                <i class="fab fa-whatsapp"></i> Contratar
-              </a>
+              <a href="https://wa.me/528128838654?text=Hola%2C%20quiero%20el%20Paquete%20B%C3%A1sico%20Antena%20de%2030Mbps" class="btn-carrusel" target="_blank"><i class="fab fa-whatsapp"></i> Contratar</a>
             </div>
           </div>
-
-          <!-- PAQUETE 5 -->
-          <div class="slide">
+          <div class="slide" data-tipo="antena">
             <div class="paquete-card">
-              <div class="card-header">
-                <span class="tipo">ANTENA</span>
-                <h3>Paquete Estándar</h3>
-              </div>
+              <div class="card-header"><span class="tipo">ANTENA</span><h3>Paquete Estándar</h3></div>
               <div class="velocidad">40 <span>Mbps</span></div>
               <div class="precio">$499 <span>/ mes</span></div>
-              <a href="https://wa.me/528128838654?text=Hola%2C%20quiero%20el%20Paquete%20Est%C3%A1ndar%20Antena%20de%2040Mbps" 
-                 class="btn-carrusel" target="_blank">
-                <i class="fab fa-whatsapp"></i> Contratar
-              </a>
+              <a href="https://wa.me/528128838654?text=Hola%2C%20quiero%20el%20Paquete%20Est%C3%A1ndar%20Antena%20de%2040Mbps" class="btn-carrusel" target="_blank"><i class="fab fa-whatsapp"></i> Contratar</a>
             </div>
           </div>
-
-          <!-- PAQUETE 6 -->
-          <div class="slide">
+          <div class="slide" data-tipo="antena">
             <div class="paquete-card">
-              <div class="card-header">
-                <span class="tipo">ANTENA</span>
-                <h3>Paquete Max</h3>
-              </div>
+              <div class="card-header"><span class="tipo">ANTENA</span><h3>Paquete Max</h3></div>
               <div class="velocidad">50 <span>Mbps</span></div>
               <div class="precio">$599 <span>/ mes</span></div>
-              <a href="https://wa.me/528128838654?text=Hola%2C%20quiero%20el%20Paquete%20Max%20Antena%20de%2050Mbps" 
-                 class="btn-carrusel" target="_blank">
-                <i class="fab fa-whatsapp"></i> Contratar
-              </a>
+              <a href="https://wa.me/528128838654?text=Hola%2C%20quiero%20el%20Paquete%20Max%20Antena%20de%2050Mbps" class="btn-carrusel" target="_blank"><i class="fab fa-whatsapp"></i> Contratar</a>
             </div>
           </div>
-
         </div>
       </div>
-
-      <!-- FLECHA SIGUIENTE -->
       <button class="nav-btn next-btn" id="nextBtn">&gt;</button>
     </div>
-
-    <!-- PUNTOS -->
     <div class="puntos" id="puntos"></div>
   </div>
 </section>
@@ -276,17 +206,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-<!-- BANNER DE CONTACTO -->
+<!-- Baner 2 -->
 <section class="contact-banner">
   <div class="banner-content">
     <h2>¡Contáctanos ya para mejorar tu conexión!</h2>
@@ -300,7 +220,16 @@
   <div class="banner-glow"></div>
 </section>
 
-<!-- SECCIÓN DE SERVoso (opcional, puedes agregar más) -->
+
+
+
+
+
+
+
+
+
+<!-- Nosotros -->
 <section class="about">
   <div class="container">
     <h2>Nosotros</h2>
@@ -319,16 +248,14 @@
 
 
 
-<!-- FOOTER -->
+<!-- Pie de Pag -->
 <footer class="footer">
   <div class="footer-container">
-    <!-- LOGO EN ESQUINA INFERIOR IZQUIERDA (SOLO IMAGEN) -->
     <div class="footer-logo-corner">
       <a href="#" class="footer-logo-img">
         <img src="Img/LogVerkBlanco.png" alt="VERKKOM Logo" class="footer-icon">
       </a>
     </div>
-    <!-- REDES SOCIALES (DERECHA) -->
     <div class="footer-social">
       <h4>Síguenos</h4>
       <div class="social-icons">
@@ -338,12 +265,20 @@
       </div>
     </div>
   </div>
-  <!-- COPYRIGHT EN ESQUINA INFERIOR DERECHA -->
   <div class="footer-bottom">
     <p>&copy; 2025 <strong>Verkkom Redes Telecom.</strong>. Todos los derechos reservados. | <a href="#privacy">Política de Privacidad</a></p>
     <p>Contacto: soporte@verkkom.com | Tel. 800-123-4567</p>
   </div>
 </footer>
+
+
+
+
+
+
+
+
+
 <script src="script.js"></script>
 </body>
 </html>
