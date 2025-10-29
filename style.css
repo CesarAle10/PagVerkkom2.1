@@ -912,7 +912,7 @@ html.scrolled .header::before {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: #00ff96;
+  background: #01ba6d;
   color: #000;
   font-weight: 700;
   font-size: 1rem;
@@ -924,7 +924,7 @@ html.scrolled .header::before {
   margin-top: 20px;
 }
 .btn-carrusel:hover {
-  background: #00cc77;
+  background: #037e4b;
   transform: translateY(-3px);
   box-shadow: 0 0 40px rgba(0, 255, 150, 1);
 }
@@ -1415,3 +1415,4 @@ html.scrolled .header::before {
   .horario-item-full { width: 100%; max-width: 300px; }
   .btn-bot { font-size: 1.1rem; padding: 14px 28px; }
 }
+
