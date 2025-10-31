@@ -76,7 +76,7 @@
 
 
 <!-- CARRUSEL DE IMÁGENES (REEMPLAZA VIDEO) -->
-<section class="carrusel-imagenes" id="video">
+<section class="carrusel-imagenes" id="Imagenes">
   <!-- FONDO FUTURISTA (MANTENIDO) -->
   <div class="futuristic-bg">
     <div class="grid-lines"></div>
@@ -137,78 +137,111 @@
 
 
   <!-- Servicios -->
-<section class="seccion-internet" id="Servicios">
-  <div class="container">
-    <h1 class="section-title">Tenemos la opción ideal para ti</h1>
-    <p class="section-subtitle">Elige el plan ideal para tu conexión</p>
-    <!-- SELECTOR -->
-    <div class="categorias">
-      <div class="categoria active" data-categoria="fibra">Fibra Óptica</div>
-      <div class="categoria" data-categoria="antena">Antena</div>
+<!-- SECCIÓN COMPLETA DE SERVICIOS (DISEÑO FUTURISTA) -->
+<!-- SECCIÓN COMPLETA DE SERVICIOS (TODOS LOS PAQUETES IGUALES) -->
+<section class="opciones-principal" id="Servicios">
+  <h1>Tenemos la opción ideal para ti</h1>
+
+  <!-- Selector de categorías -->
+  <div class="categorias">
+    <div class="categoria active" data-categoria="fibra">
+      <i class="fas fa-bolt"></i> Fibra Óptica
     </div>
-    <p class="descripcion-categoria" id="descripcionCategoria">
-      ¡Todo en uno, sin complicaciones! Conecta tu hogar o negocio con la mejor tecnología y disfruta de nuestro servicio sin preocupaciones.
-    </p>
-    <!-- CARRUSEL -->
-    <div class="carrusel-wrapper">
-      <button class="nav-btn prev-btn" id="prevBtn">&lt;</button>
-      <div class="carrusel-container">
-        <div class="carrusel-track" id="carruselTrack">
-          <!-- FIBRA -->
-          <div class="slide" data-tipo="fibra">
-            <div class="paquete-card">
-              <div class="card-header"><span class="tipo">FIBRA ÓPTICA</span><h3>Paquete Básico</h3></div>
-              <div class="velocidad">100 <span>Mbps</span></div>
-              <div class="precio">$500 <span>/ mes</span></div>
-              <a href="https://wa.me/528128838654?text=Hola%2C%20quiero%20el%20Paquete%20B%C3%A1sico%20Fibra%20de%20100Mbps" class="btn-carrusel" target="_blank"><i class="fab fa-whatsapp"></i> Contratar</a>
-            </div>
-          </div>
-          <div class="slide" data-tipo="fibra">
-            <div class="paquete-card">
-              <div class="card-header"><span class="tipo popular">FIBRA ÓPTICA</span><h3>Paquete Estándar</h3></div>
-              <div class="velocidad">150 <span>Mbps</span></div>
-              <div class="precio">$600 <span>/ mes</span></div>
-              <a href="https://wa.me/528128838654?text=Hola%2C%20quiero%20el%20Paquete%20Est%C3%A1ndar%20Fibra%20de%20150Mbps" class="btn-carrusel" target="_blank"><i class="fab fa-whatsapp"></i> Contratar</a>
-            </div>
-          </div>
-          <div class="slide" data-tipo="fibra">
-            <div class="paquete-card">
-              <div class="card-header"><span class="tipo">FIBRA ÓPTICA</span><h3>Paquete Max</h3></div>
-              <div class="velocidad">200 <span>Mbps</span></div>
-              <div class="precio">$700 <span>/ mes</span></div>
-              <a href="https://wa.me/528128838654?text=Hola%2C%20quiero%20el%20Paquete%20Max%20Fibra%20de%20200Mbps" class="btn-carrusel" target="_blank"><i class="fab fa-whatsapp"></i> Contratar</a>
-            </div>
-          </div>
-          <!-- ANTENA -->
-          <div class="slide" data-tipo="antena">
-            <div class="paquete-card">
-              <div class="card-header"><span class="tipo">ANTENA</span><h3>Paquete Básico</h3></div>
-              <div class="velocidad">30 <span>Mbps</span></div>
-              <div class="precio">$399 <span>/ mes</span></div>
-              <a href="https://wa.me/528128838654?text=Hola%2C%20quiero%20el%20Paquete%20B%C3%A1sico%20Antena%20de%2030Mbps" class="btn-carrusel" target="_blank"><i class="fab fa-whatsapp"></i> Contratar</a>
-            </div>
-          </div>
-          <div class="slide" data-tipo="antena">
-            <div class="paquete-card">
-              <div class="card-header"><span class="tipo">ANTENA</span><h3>Paquete Estándar</h3></div>
-              <div class="velocidad">40 <span>Mbps</span></div>
-              <div class="precio">$499 <span>/ mes</span></div>
-              <a href="https://wa.me/528128838654?text=Hola%2C%20quiero%20el%20Paquete%20Est%C3%A1ndar%20Antena%20de%2040Mbps" class="btn-carrusel" target="_blank"><i class="fab fa-whatsapp"></i> Contratar</a>
-            </div>
-          </div>
-          <div class="slide" data-tipo="antena">
-            <div class="paquete-card">
-              <div class="card-header"><span class="tipo">ANTENA</span><h3>Paquete Max</h3></div>
-              <div class="velocidad">50 <span>Mbps</span></div>
-              <div class="precio">$599 <span>/ mes</span></div>
-              <a href="https://wa.me/528128838654?text=Hola%2C%20quiero%20el%20Paquete%20Max%20Antena%20de%2050Mbps" class="btn-carrusel" target="_blank"><i class="fab fa-whatsapp"></i> Contratar</a>
-            </div>
-          </div>
-        </div>
+    <div class="categoria" data-categoria="antena">
+      <i class="fas fa-wifi"></i> Antena
+    </div>
+  </div>
+
+  <!-- Descripción -->
+  <p class="descripcion-categoria">
+    ¡Todo en uno, sin complicaciones! Conecta tu hogar o negocio con la mejor tecnología y disfruta de nuestro servicio sin preocupaciones.
+  </p>
+
+  <!-- Paquetes -->
+  <div class="paquetes">
+    <!-- FIBRA -->
+    <div class="paquete" data-categoria="fibra">
+      <div class="paquete-inner">
+        <h2>Paquete Básico</h2>
+        <div class="velocidad">100 Mbps</div>
+        <div class="precio">$500 / mes</div>
+        <a href="https://wa.me/528128838654?text=Hola%2C%20quiero%20el%20Paquete%20B%C3%A1sico%20Fibra%20de%20100Mbps" 
+           class="btn-paquete" target="_blank">
+          <i class="fab fa-whatsapp"></i> Contratar
+        </a>
       </div>
-      <button class="nav-btn next-btn" id="nextBtn">&gt;</button>
     </div>
-    <div class="puntos" id="puntos"></div>
+
+    <div class="paquete" data-categoria="fibra">
+      <div class="paquete-inner">
+        <h2>Paquete Estándar</h2>
+        <div class="velocidad">150 Mbps</div>
+        <div class="precio">$600 / mes</div>
+        <a href="https://wa.me/528128838654?text=Hola%2C%20quiero%20el%20Paquete%20Est%C3%A1ndar%20Fibra%20de%20150Mbps" 
+           class="btn-paquete" target="_blank">
+          <i class="fab fa-whatsapp"></i> Contratar
+        </a>
+      </div>
+    </div>
+
+    <div class="paquete" data-categoria="fibra">
+      <div class="paquete-inner">
+        <h2>Paquete Max</h2>
+        <div class="velocidad">200 Mbps</div>
+        <div class="precio">$700 / mes</div>
+        <a href="https://wa.me/528128838654?text=Hola%2C%20quiero%20el%20Paquete%20Max%20Fibra%20de%20200Mbps" 
+           class="btn-paquete" target="_blank">
+          <i class="fab fa-whatsapp"></i> Contratar
+        </a>
+      </div>
+    </div>
+
+    <!-- ANTENA -->
+    <div class="paquete" data-categoria="antena">
+      <div class="paquete-inner">
+        <h2>Paquete Básico</h2>
+        <div class="velocidad">30 Mbps</div>
+        <div class="precio">$399 / mes</div>
+        <a href="https://wa.me/528128838654?text=Hola%2C%20quiero%20el%20Paquete%20B%C3%A1sico%20Antena%20de%2030Mbps" 
+           class="btn-paquete" target="_blank">
+          <i class="fab fa-whatsapp"></i> Contratar
+        </a>
+      </div>
+    </div>
+
+    <div class="paquete" data-categoria="antena">
+      <div class="paquete-inner">
+        <h2>Paquete Estándar</h2>
+        <div class="velocidad">40 Mbps</div>
+        <div class="precio">$499 / mes</div>
+        <a href="https://wa.me/528128838654?text=Hola%2C%20quiero%20el%20Paquete%20Est%C3%A1ndar%20Antena%20de%2040Mbps" 
+           class="btn-paquete" target="_blank">
+          <i class="fab fa-whatsapp"></i> Contratar
+        </a>
+      </div>
+    </div>
+
+    <div class="paquete" data-categoria="antena">
+      <div class="paquete-inner">
+        <h2>Paquete Max</h2>
+        <div class="velocidad">50 Mbps</div>
+        <div class="precio">$599 / mes</div>
+        <a href="https://wa.me/528128838654?text=Hola%2C%20quiero%20el%20Paquete%20Max%20Antena%20de%2050Mbps" 
+           class="btn-paquete" target="_blank">
+          <i class="fab fa-whatsapp"></i> Contratar
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOLICITUD DE INSTALACIÓN -->
+  <div class="solicitud-instalacion">
+    <h2>¿Listo para instalar?</h2>
+    <p>Completa tu solicitud en línea y nos pondremos en contacto contigo en menos de 24 horas.</p>
+    <a href="https://wisphub.io/solicitar-instalacion/netkkom/" 
+       class="btn-solicitud" target="_blank">
+      <i class="fas fa-tools"></i> Solicitar Instalación
+    </a>
   </div>
 </section>
 
@@ -220,9 +253,8 @@
 
 
 
-
 <!-- Baner 2 -->
-<section class="contact-banner">
+<section class="contact-banner" id="contact-banner">
   <div class="banner-content">
     <h2>¡Contáctanos ya para mejorar tu conexión!</h2>
     <p>Respuesta inmediata vía WhatsApp. Soluciones personalizadas en menos de 24h.</p>
@@ -281,7 +313,33 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2025 <strong>Verkkom Redes Telecom.</strong>. Todos los derechos reservados. | <a href="#privacy">Política de Privacidad</a></p>
+    <p>&copy; 2025 <strong>Verkkom Redes Telecom.</strong>. Todos los derechos reservados. | 
+      <!-- BOTÓN QUE ABRE EL MODAL -->
+  <span onclick="document.getElementById('modalPrivacidad').style.display='flex'" 
+        style="color:#00ff96;cursor:pointer;text-decoration:underline;">
+    Política de Privacidad
+  </span>
+</p>
+
+<!-- MODAL MINI DE POLÍTICA DE PRIVACIDAD -->
+<div id="modalPrivacidad" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:9999;justify-content:center;align-items:center;padding:20px;">
+  <div style="background:rgba(15,25,40,0.95);border:2px solid #00ccff;border-radius:20px;padding:25px;max-width:600px;width:100%;max-height:80vh;overflow-y:auto;box-shadow:0 0 40px rgba(0,204,255,0.3);">
+    <h3 style="color:#00ff96;margin:0 0 15px;font-family:'Orbitron',sans-serif;text-align:center;">Política de Privacidad</h3>
+    <div style="color:#ccc;font-size:0.95rem;line-height:1.6;">
+      <p><strong>En espera</strong><br>
+      En espera</p>
+      <p style="text-align:center;margin-top:20px;">
+        <strong>Verkkom Redes Telecom</strong><br>
+        Última actualización: 31 de octubre de 2025
+      </p>
+    </div>
+    <button onclick="document.getElementById('modalPrivacidad').style.display='none'" 
+            style="margin-top:20px;padding:10px 30px;background:#ff3366;color:white;border:none;border-radius:50px;cursor:pointer;font-weight:bold;">
+      Cerrar
+    </button>
+  </div>
+</div>
+    </p>
     <p>Contacto: soporte@verkkom.com | Tel. 800-123-4567</p>
   </div>
 </footer>
