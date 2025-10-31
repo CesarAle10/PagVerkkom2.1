@@ -1,81 +1,24 @@
 // Carrusel de paquetes
-document.addEventListener("DOMContentLoaded", () => {
-  const categorias = document.querySelectorAll('.categoria');
-  const descripcion = document.getElementById('descripcionCategoria');
-  const slides = document.querySelectorAll('.slide');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  const puntosContainer = document.getElementById('puntos');
-  let currentCategoria = 'fibra';
-  let currentIndex = 0;
-  let filteredSlides = [];
-  const descripciones = {
-    fibra: "¡Todo en uno, sin complicaciones! Conecta tu hogar o negocio con la mejor tecnología y disfruta de nuestro servicio sin preocupaciones.",
-    antena: "Conexión inalámbrica confiable y rápida. Ideal para zonas donde la fibra aún no llega. ¡Sin cables, sin límites!"
-  };
-  function filtrarSlides(categoria) {
-    filteredSlides = Array.from(slides).filter(s => s.dataset.tipo === categoria);
-    currentIndex = 0;
-    updateCarrusel();
-    updatePuntos();
-  }
-  function updateCarrusel() {
-    slides.forEach(s => {
-      s.classList.remove('active');
-      s.style.display = 'none';
-    });
-    if (filteredSlides.length > 0) {
-      const activeSlide = filteredSlides[currentIndex];
-      activeSlide.classList.add('active');
-      activeSlide.style.display = 'flex';
-    }
-  }
-  function updatePuntos() {
-    puntosContainer.innerHTML = '';
-    if (filteredSlides.length <= 1) {
-      prevBtn.style.display = 'none';
-      nextBtn.style.display = 'none';
-      return;
-    } else {
-      prevBtn.style.display = 'flex';
-      nextBtn.style.display = 'flex';
-    }
-    filteredSlides.forEach((_, i) => {
-      const punto = document.createElement('div');
-      punto.classList.add('punto');
-      if (i === currentIndex) punto.classList.add('active');
-      punto.addEventListener('click', () => {
-        currentIndex = i;
-        updateCarrusel();
-        updatePuntos();
-      });
-      puntosContainer.appendChild(punto);
-    });
-  }
-  prevBtn.addEventListener('click', () => {
-    if (filteredSlides.length <= 1) return;
-    currentIndex = (currentIndex - 1 + filteredSlides.length) % filteredSlides.length;
-    updateCarrusel();
-    updatePuntos();
-  });
-  nextBtn.addEventListener('click', () => {
-    if (filteredSlides.length <= 1) return;
-    currentIndex = (currentIndex + 1) % filteredSlides.length;
-    updateCarrusel();
-    updatePuntos();
-  });
-  categorias.forEach(cat => {
-    cat.addEventListener('click', () => {
-      categorias.forEach(c => c.classList.remove('active'));
-      cat.classList.add('active');
-      currentCategoria = cat.dataset.categoria;
-      descripcion.textContent = descripciones[currentCategoria];
-      filtrarSlides(currentCategoria);
-    });
-  });
-  filtrarSlides('fibra');
-});
+  document.addEventListener('DOMContentLoaded', () => {
+    const categorias = document.querySelectorAll('.categoria');
+    const paquetes = document.querySelectorAll('.paquete');
 
+    function mostrarCategoria(categoria) {
+      paquetes.forEach(p => {
+        p.style.display = (p.dataset.categoria === categoria) ? 'flex' : 'none';
+      });
+    }
+
+    categorias.forEach(cat => {
+      cat.addEventListener('click', () => {
+        categorias.forEach(c => c.classList.remove('active'));
+        cat.classList.add('active');
+        mostrarCategoria(cat.dataset.categoria);
+      });
+    });
+
+    mostrarCategoria('fibra');
+  });
 
 
 
@@ -97,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // Abansar los baners
-const seccionesIndex = ['Inicio', 'video', 'Servicios', 'contact-banner', 'about'];
+const seccionesIndex = ['Inicio', 'Imagenes', 'Servicios', 'contact-banner', 'about'];
 const seccionesAyuda = ['Inicio', 'bot']; 
 let indice = 0;
 let intervalo = null;
@@ -212,3 +155,4 @@ nextImgBtn2.addEventListener('click', () => {
   imgIndex2 = (imgIndex2 + 1) % imgSlides2.length;
   showImgSlide2(imgIndex2);
 });
+
