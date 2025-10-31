@@ -37,58 +37,65 @@
 
 
 
+<!-- Baner 1 -->
+<section class="hero-ayuda-full" id="Inicio">
+  <div class="hero-bg"></div>
+  <div class="network-bg">
+    <div class="node"></div>
+    <div class="node"></div>
+    <div class="node"></div>
+    <div class="node"></div>
+    <div class="node"></div>
+    <div class="node"></div>
+    <div class="node"></div>
+    <div class="node"></div>
+    <div class="node"></div>
+    <div class="node"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
 
-  <!-- Baner 1 -->
-  <section class="hero-ayuda-full" id="Inicio">
-    <div class="hero-bg"></div>
-    <div class="network-bg">
-      <div class="node"></div>
-      <div class="node"></div>
-      <div class="node"></div>
-      <div class="node"></div>
-      <div class="node"></div>
-      <div class="node"></div>
-      <div class="node"></div>
-      <div class="node"></div>
-      <div class="node"></div>
-      <div class="node"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
+  <div class="hero-content-full">
+    <div class="logo-icon">
+      <img src="Img/LogVerkBlanco.png" alt="Verkkom" class="logo-hero">
     </div>
 
-    <div class="hero-content-full">
-      <div class="logo-icon">
-        <img src="Img/LogVerkBlanco.png" alt="Verkkom" class="logo-hero">
+    <div class="horario-full">
+      <!-- BOT WHATSAPP -->
+      <div class="horario-item-full" 
+           onclick="window.open('https://wa.me/528128838654?text=Hola%2C%20necesito%20ayuda', '_blank')">
+        <i class="fas fa-robot"></i>
+        <div>
+          <strong>BOT WhatsApp</strong>
+          <span>24/7 - 365 días</span>
+        </div>
       </div>
 
-      <div class="horario-full">
-        <div class="horario-item-full">
-          <i class="fas fa-robot"></i>
-          <div>
-            <strong>BOT WhatsApp</strong>
-            <span>24/7 - 365 días</span>
-          </div>
+      <!-- SOPORTE TÉCNICO -->
+      <div class="horario-item-full" 
+           onclick="window.open('https://wa.me/528128838654?text=Hola%2C%20tengo%20un%20problema%20t%C3%A9cnico', '_blank')">
+        <i class="fas fa-headset"></i>
+        <div>
+          <strong>Soporte Técnico</strong>
+          <span>Lun - Dom: 10:00 AM - 3:00 AM</span>
         </div>
-        <div class="horario-item-full">
-          <i class="fas fa-headset"></i>
-          <div>
-            <strong>Soporte Técnico</strong>
-            <span>Lun - Dom: 10:00 AM - 3:00 AM</span>
-          </div>
-        </div>
-        <div class="horario-item-full">
-          <i class="fas fa-wrench"></i>
-          <div>
-            <strong>Instalaciones</strong>
-            <span>Lun - Sab: 10:00 AM - 6:00 PM</span>
-          </div>
+      </div>
+
+      <!-- INSTALACIONES -->
+      <div class="horario-item-full" 
+           onclick="window.open('https://wisphub.io/solicitar-instalacion/netkkom/', '_blank')">
+        <i class="fas fa-wrench"></i>
+        <div>
+          <strong>Instalaciones</strong>
+          <span>Lun - Sab: 10:00 AM - 6:00 PM</span>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
 
 
@@ -139,7 +146,33 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 <strong>Verkkom Redes Telecom.</strong>. Todos los derechos reservados. | <a href="#privacy">Política de Privacidad</a></p>
+      <p>© 2025 <strong>Verkkom Redes Telecom.</strong>. Todos los derechos reservados. | 
+        <!-- BOTÓN QUE ABRE EL MODAL -->
+  <span onclick="document.getElementById('modalPrivacidad').style.display='flex'" 
+        style="color:#00ff96;cursor:pointer;text-decoration:underline;">
+    Política de Privacidad
+  </span>
+</p>
+
+<!-- MODAL MINI DE POLÍTICA DE PRIVACIDAD -->
+<div id="modalPrivacidad" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:9999;justify-content:center;align-items:center;padding:20px;">
+  <div style="background:rgba(15,25,40,0.95);border:2px solid #00ccff;border-radius:20px;padding:25px;max-width:600px;width:100%;max-height:80vh;overflow-y:auto;box-shadow:0 0 40px rgba(0,204,255,0.3);">
+    <h3 style="color:#00ff96;margin:0 0 15px;font-family:'Orbitron',sans-serif;text-align:center;">Política de Privacidad</h3>
+    <div style="color:#ccc;font-size:0.95rem;line-height:1.6;">
+      <p><strong>En espera</strong><br>
+      En espera</p>
+      <p style="text-align:center;margin-top:20px;">
+        <strong>Verkkom Redes Telecom</strong><br>
+        Última actualización: 31 de octubre de 2025
+      </p>
+    </div>
+    <button onclick="document.getElementById('modalPrivacidad').style.display='none'" 
+            style="margin-top:20px;padding:10px 30px;background:#ff3366;color:white;border:none;border-radius:50px;cursor:pointer;font-weight:bold;">
+      Cerrar
+    </button>
+  </div>
+</div>
+    </p>
       <p>Contacto: soporte@verkkom.com | Tel. 800-123-4567</p>
     </div>
   </footer>
